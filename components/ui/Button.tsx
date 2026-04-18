@@ -67,23 +67,33 @@ export const Button = React.forwardRef<
 
     if (href) {
       const { onClick, tabIndex, ...rest } = props as Omit<ButtonAsLinkProps, "href">;
+      const isHashAnchor = href.startsWith("#");
+
+      const anchorProps = {
+        className: classes,
+        "aria-disabled": disabled || undefined,
+        tabIndex: disabled ? -1 : tabIndex,
+        onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+          if (disabled) {
+            e.preventDefault();
+            return;
+          }
+          onClick?.(e);
+        },
+        ref: ref as React.Ref<HTMLAnchorElement>,
+        ...rest,
+      };
+
+      if (isHashAnchor) {
+        return (
+          <a href={href} {...anchorProps}>
+            {children}
+          </a>
+        );
+      }
 
       return (
-        <Link
-          href={href}
-          className={classes}
-          aria-disabled={disabled || undefined}
-          tabIndex={disabled ? -1 : tabIndex}
-          onClick={(e) => {
-            if (disabled) {
-              e.preventDefault();
-              return;
-            }
-            onClick?.(e);
-          }}
-          ref={ref as React.Ref<HTMLAnchorElement>}
-          {...rest}
-        >
+        <Link href={href} {...anchorProps}>
           {children}
         </Link>
       );
