@@ -17,6 +17,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TikTokIcon } from "@/components/ui/TikTokIcon";
 import {
   FADE_UP,
   SCALE_UP,
@@ -79,24 +80,6 @@ function Field({
         />
       )}
     </div>
-  );
-}
-
-/* ── TikTok placeholder icon ── */
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-    </svg>
   );
 }
 

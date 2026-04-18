@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Container } from "@/components/ui/Container";
+import { TikTokIcon } from "@/components/ui/TikTokIcon";
 import {
   FADE_IN,
   FADE_UP,
@@ -17,20 +18,6 @@ import { cn } from "@/lib/utils";
 
 export interface FooterProps {
   className?: string;
-}
-
-function TikTokMark({ className }: { className?: string }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-full border border-coffee-200/30 text-sm font-semibold",
-        className,
-      )}
-    >
-      T
-    </span>
-  );
 }
 
 const socialStagger = {
@@ -95,13 +82,13 @@ export function Footer({ className }: FooterProps) {
                 href={SITE_CONFIG.social.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center text-coffee-200 transition hover:text-coffee-300"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-coffee-200/30 text-coffee-200 transition hover:text-coffee-300"
                 aria-label="TikTok"
                 variants={socialItem}
                 whileHover={{ scale: 1.1, y: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <TikTokMark />
+                <TikTokIcon className="h-4 w-4" />
               </motion.a>
             </motion.div>
           </motion.div>
