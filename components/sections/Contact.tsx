@@ -20,7 +20,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TikTokIcon } from "@/components/ui/TikTokIcon";
 import {
   FADE_UP,
-  SCALE_UP,
   SLIDE_LEFT,
   SLIDE_RIGHT,
   STAGGER_CONTAINER,
