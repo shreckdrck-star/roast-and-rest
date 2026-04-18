@@ -138,7 +138,7 @@ export function Reviews() {
               </motion.div>
             </div>
             <p className="mt-1 text-sm text-coffee-400">
-              Average rating from 200+ reviews
+              Average rating from our customers
             </p>
           </div>
         </AnimatedSection>
