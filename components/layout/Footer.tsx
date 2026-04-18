@@ -154,7 +154,7 @@ export function Footer({ className }: FooterProps) {
         <div className="border-t border-coffee-200">
           <Container as="div" className="py-6">
             <p className="text-center text-sm text-coffee-400">
-              © 2024 {SITE_CONFIG.name}. All rights reserved.
+              © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
             </p>
           </Container>
         </div>
