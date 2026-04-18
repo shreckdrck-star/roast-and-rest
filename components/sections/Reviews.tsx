@@ -41,17 +41,15 @@ function AnimatedRating({ value }: { value: number }) {
   const spring = useSpring(count, { stiffness: 50, damping: 15 });
 
   React.useEffect(() => {
-    if (isInView) count.set(value);
-  }, [isInView, count, value]);
-
-  React.useEffect(() => {
+    if (!isInView) return;
     const unsubscribe = spring.on("change", (v) => {
       if (ref.current) ref.current.textContent = v.toFixed(1);
     });
+    count.set(value);
     return unsubscribe;
-  }, [spring]);
+  }, [isInView, count, spring, value]);
 
-  return <span ref={ref}>0.0</span>;
+  return <span ref={ref}>{value.toFixed(1)}</span>;
 }
 
 /* ── Star pop-in variant ── */
