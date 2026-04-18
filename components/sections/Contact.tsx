@@ -110,7 +110,8 @@ export function Contact() {
     const data = new FormData(e.currentTarget);
     const name = (data.get("name") as string)?.trim();
     const email = (data.get("email") as string)?.trim();
-    if (name && email) setIsSubmitted(true);
+    const message = (data.get("message") as string)?.trim();
+    if (name && email && message) setIsSubmitted(true);
   };
 
   return (
