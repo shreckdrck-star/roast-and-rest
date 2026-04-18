@@ -327,12 +327,12 @@ export function Contact() {
                 <div className="absolute inset-0 bg-coffee-900/20" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <MapPin className="h-10 w-10 text-white/80" />
-                  <p className="mt-2 text-sm font-medium text-white/90">
-                    42 Brew Street, Portland
+                  <p className="mt-2 px-4 text-center text-sm font-medium text-white/90">
+                    {SITE_CONFIG.address}
                   </p>
                 </div>
                 <a
-                  href="https://maps.google.com"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE_CONFIG.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bottom-3 right-3 text-sm text-white/80 underline underline-offset-2 hover:text-white"
